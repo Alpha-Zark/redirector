@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: root-domain-gateway-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: root-domain-gateway
+  template:
+    metadata:
+      labels:
+        app: root-domain-gateway
+    spec:
+      containers:
+        - name: gateway
+          image: zark01/pphsub:redirector-
+          ports:
+            - containerPort: 80
