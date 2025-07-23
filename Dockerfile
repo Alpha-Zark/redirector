@@ -1,5 +1,5 @@
 # 第一阶段：构建 Go 二进制
-FROM golang:1.22-alpine AS builder
+FROM golang:1.24-alpine AS builder
 
 # 安装 git 等构建依赖（如果需要拉依赖）
 RUN apk add --no-cache git
