@@ -12,7 +12,7 @@ COPY . .
 
 RUN go mod download
 # 构建 Go 应用（Linux amd64，输出为 redirector）
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /redirector main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /redirector ./cmd/main.go
 
 # 第二阶段：构建精简运行镜像
 FROM alpine:3.20
